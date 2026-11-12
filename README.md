@@ -50,3 +50,13 @@ a GPU-specific claim.
 
 License
 MIT. See LICENSE.
+
+## Fedora packaging
+
+Not yet packaged. `rust-wgpu-devel` is not in Fedora 43, and `wgpu`
+carries a large `crate(...)` dependency tree. Until that tree is
+packaged, the crate builds and tests locally but has no RPM. This is
+a dependency-availability problem, not a spec problem.
+
+The other three packages (`the-level`, `copperlist`, `reach`) are in
+Copr at simoesctt/the-level, simoesctt/copperlist, simoesctt/reach.
