@@ -1,0 +1,14 @@
+[package]
+name = "thelevel"
+version = "0.1.0"
+edition = "2021"
+description = "A Rust contract for CPU/GPU shared memory: one handoff, one completion handle, one chain."
+license = "MIT"
+repository = "https://github.com/SimoesCTT/thelevel-rs"
+
+[dependencies]
+libc = "0.2"
+drm = "0.11"
+wgpu = "24"
+pollster = "0.4"
+bytemuck = { version = "1", features = ["derive"] }
