@@ -36,10 +36,13 @@ impl Backend for WgpuBackend {
                 force_fallback_adapter: false,
             },
         )).ok_or(BackendError::NoDevice)?;
+        if !adapter.features().contains(wgpu::Features::MAPPABLE_PRIMARY_BUFFERS) {
+            return Err(BackendError::Unsupported);
+        }
         let (device, queue) = pollster::block_on(adapter.request_device(
             &wgpu::DeviceDescriptor {
                 label: Some("thelevel"),
-                required_features: wgpu::Features::empty(),
+                required_features: wgpu::Features::MAPPABLE_PRIMARY_BUFFERS,
                 required_limits: wgpu::Limits::downlevel_defaults(),
                 ..Default::default()
             },

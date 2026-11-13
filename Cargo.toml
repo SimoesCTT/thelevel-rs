@@ -12,3 +12,6 @@ drm = "0.11"
 wgpu = "24"
 pollster = "0.4"
 bytemuck = { version = "1", features = ["derive"] }
+
+[profile.rpm]
+inherits = "release"
