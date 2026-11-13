@@ -2,3 +2,5 @@ target/
 Cargo.lock
 *.spec.bak
 *.patch
+*.tar.xz
+*.tar.gz
